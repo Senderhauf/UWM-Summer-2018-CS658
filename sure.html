@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ul id="myList">
+  <li><text>Coffee</text></li>
+  <li><text>Tea</text></li>
+</ul>
+
+<p>Click the button to see if the ul element has any child nodes.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<button onclick="getNodes()">Do It</button>
+
+<p>Try removing the child nodes of the list element, and the result will be false instead of true.</p>
+
+<p><strong>Note:</strong> Whitespace inside a node is considered as text nodes, so if you leave any white space or line feeds inside an element, that element still has child nodes.</p>
+
+<p id="demo"></p>
+
+<p id="doit"></p>
+
+<script>
+function myFunction() {
+    var list = document.getElementById("myList").hasChildNodes();
+    document.getElementById("demo").innerHTML = list;
+}
+
+
+</script>
+<script>
+function getNodes(){
+	var list = document.getElementById("myList").getElementsByTagName("text");
+    let txt = "";
+    var i;
+    for (i = 0; i < list.length; i++) {
+        txt = txt + list[i].innerHTML + "<br>";
+    }
+    document.getElementById("doit").innerHTML = txt;
+}
+</script>
+
+</body>
+</html>

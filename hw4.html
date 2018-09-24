@@ -1,0 +1,88 @@
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Pro Mern Stack</title>
+      <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.js"></script>-->
+      <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.js"></script>-->
+      <style id="holderjs-style" type="text/css"></style>
+      <script type="text/javascript">
+         function changeText(){
+            getNodes(document.body);
+         }
+
+         function getNodes(node){
+            var list = node.getElementsByTagName("text");
+            for(let element of list){
+               element.innerText = transform(element.innerText);
+            }
+
+            // var list = node.getElementsByTagName("text");
+            // if(list.length > 0){
+            //    for(let element of list) {
+            //       getNodes(element);
+            //    }
+            // }
+            // node.textContent = transform(node.textContent);
+         }
+
+         function transform(text){
+            let newText = "";
+            let i;
+            for(i=0; i<text.length; i++){
+               newText += String.fromCharCode(text.charCodeAt(i)+1);
+            }
+            return newText;
+         }
+      </script>
+   </head>
+   <body class=" __plain_text_READY__">
+      <div id="contents">
+         <div data-reactroot="">
+            <h1>Issue Tracker</h1>
+            <div><text>This is a placeholder for the Issue Filter.</text></div>
+            <hr>
+            <table class="bordered-table">
+               <thead>
+                  <tr>
+                     <th><text>Id</text></th>
+                     <th><text>Status</text></th>
+                     <th><text>Owner</text></th>
+                     <th><text>Created</text></th>
+                     <th><text>Effort</text></th>
+                     <th><text>Completion Date</text></th>
+                     <th><text>Title</text></th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><text>1</text></td>
+                     <td><text>Open</text></td>
+                     <td><text>Raven</text></td>
+                     <td><text>Sun Jul 22 2018</text></td>
+                     <td><text>5</text></td>
+                     <td></td>
+                     <td><text>Error in console when clicking Add</text></td>
+                  </tr>
+                  <tr>
+                     <td><text>2</text></td>
+                     <td><text>Assigned</text></td>
+                     <td><text>Eddie</text></td>
+                     <td><text>Sun Jul 22 2018</text></td>
+                     <td><text>14</text></td>
+                     <td><text>Sun Jul 29 2018</text></td>
+                     <td><text>Missing bottom border on panel</text></td>
+                  </tr>
+               </tbody>
+            </table>
+            <hr>
+            <div><text> This is a placeholder for an Issue Add entry form. </text></div>
+         </div>
+         <button onclick="changeText()">Wreck it!</button>
+      </div>
+      <!--<script src="/App.js"></script>-->
+      <style>
+         table.bordered-table th, td {border: 1px solid silver; padding:4px}
+         table.bordered-table {border-collapse:collapse}
+      </style>
+   </body>
+</html>
